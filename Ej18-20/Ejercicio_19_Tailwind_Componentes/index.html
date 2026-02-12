@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19: Componentes Complejos</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-10 flex items-center justify-center min-h-screen">
+
+    <!-- 
+        RETO: Crear una tarjeta de "Propiedad Inmobiliaria" (Real Estate Card)
+        Inspírate en sitios como Airbnb.
+        
+        Estructura sugerida:
+        1. Contenedor principal: ancho fijo, borde redondeado, sombra, fondo blanco, overflow hidden.
+        2. Imagen superior: usa una imagen de placeholder (https://via.placeholder.com/400x250).
+        3. Contenido (padding):
+           - Fila superior: Etiqueta "NUEVO" (badge) y precio.
+           - Título de la propiedad (negrita, truncado si es largo).
+           - Dirección (texto gris, pequeño).
+           - Características (iconos + texto): ej. 🛏️ 3 Beds  🚿 2 Baths (usa Flexbox).
+           - Footer tarjeta: Botón "Ver detalles" y botón "Guardar" (corazón).
+    -->
+
+    <div class="max-w-sm bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <!-- Imagen -->
+        <div class="relative">
+            <img class="w-full h-52 object-cover"
+                src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Apartamento de Lujo">
+            <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-md">
+                EN VENTA
+            </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-sm font-medium text-gray-600 uppercase tracking-wide">Apartamento de Lujo</span>
+                <span class="text-2xl font-bold text-gray-900">$450,000</span>
+            </div>
+
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Residencial Los Olivos</h3>
+            <p class="text-gray-500 text-sm mb-4 flex items-center">
+                <span class="material-icons text-gray-400 mr-1 text-base">location_on</span>
+                Av. Principal 123, Madrid, España
+            </p>
+
+            <!-- Características -->
+            <div class="flex items-center justify-between text-sm text-gray-700 mb-5 border-t border-gray-200 pt-4">
+                <div class="flex items-center">
+                    <span class="material-icons text-gray-500 mr-1.5 text-base">bed</span>
+                    <span class="font-medium">3</span> Habs
+                </div>
+                <div class="flex items-center">
+                    <span class="material-icons text-gray-500 mr-1.5 text-base">bathtub</span>
+                    <span class="font-medium">2</span> Baños
+                </div>
+                <div class="flex items-center">
+                    <span class="material-icons text-gray-500 mr-1.5 text-base">square_foot</span>
+                    <span class="font-medium">120</span>m²
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex space-x-3">
+                <button class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
+                    Contactar
+                </button>
+                <button class="p-2.5 border border-gray-300 rounded-lg text-gray-500 hover:text-red-600 hover:border-red-400 transition-all duration-200">
+                    <span class="material-icons text-xl">favorite_border</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
