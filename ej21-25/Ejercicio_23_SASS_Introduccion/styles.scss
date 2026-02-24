@@ -1,0 +1,40 @@
+// Ejercicio 23: SASS Introducción
+
+// 1. Define Variables ($color-principal, $fuente...)
+$color-principal: #3498db;
+$fuente: sans-serif;
+
+// 2. Usa Nesting para dar estilo a la .container, h1, p y .btn
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: $fuente;
+    
+    h1 {
+        color: $color-principal;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: $color-principal;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        
+        &:hover {
+            background-color: darken($color-principal, 10%);
+        }
+    }
+}
